@@ -1,0 +1,28 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "iny-schematics": {
+      "description": "A blank schematic.",
+      "factory": "./iny-schematics/index#inySchematics"
+    },
+    "hola-mundo": {
+      "description": "A blank schematic.",
+      "factory": "./iny-schematics/index#holaMundo"
+    },
+    "hola-quien" : {
+      "description": "Schematics de saludo con opciones",
+      "factory": "./iny-schematics/index#holaQuien",
+      "schema": "./iny-schematics/hola-quien.schema.json"
+    },
+    "hola-component" : {
+      "description": "Schematics de saludo en un 'componente'",
+      "factory": "./iny-schematics/index#holaComponent",
+      "schema": "./iny-schematics/hola-component.schema.json"
+    },
+    "hola-component-final" : {
+      "description": "Schematics de saludo en un 'componente' incorporado en el proyecto",
+      "factory": "./iny-schematics/index#holaComponentFinal",
+      "schema": "./iny-schematics/hola-component-final.schema.json"
+    }
+  }
+}
