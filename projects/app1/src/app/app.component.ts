@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItems } from 'corelib1';
 
 @Component({
 	selector: 'iny-root',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
   
-	title!: string;
-	subtitle!: string;
+	title!: string ;
+	subtitle!: string 
+	logo!: string
+	autor!: string
+	email!: string 
+	menuItems!: Array<MenuItems>
 	constructor() {
 		//
 	}
@@ -16,5 +21,14 @@ export class AppComponent implements OnInit{
 	ngOnInit (): void {
 		this.title = 'Curso de Angular Avanzado';
 		this.subtitle = 'Inycom (Desaprendiendo) - Mayo 2021';
+		this.logo = 'assets/logo.svg';  
+		this.autor = 'Alejandro Cerezo';
+		this.email = 'alce65@hotmail.es';
+		this.menuItems = [
+			{name: 'Home', path: 'home'},
+			{name: 'Autores', path: 'autores'},
+			{name: 'Tareas', path: 'tareas'},
+			{name: 'About', path: 'about'}
+		];
 	}
 }

@@ -14,16 +14,13 @@
 address {
     display: flex;
     justify-content: center;
-
-}
-
-address a {
+    a {
         color: inherit;
     }
-address span {
+    span {
         margin: 0 0.2rem;
-    }
-
+    }    
+}
 
 p {
     display: flex;

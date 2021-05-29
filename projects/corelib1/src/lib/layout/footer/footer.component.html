@@ -1,8 +1,8 @@
 <footer>
     <p><ng-content></ng-content></p>
-    <p class="fecha">{{ hoy }}</p>    
+    <p class="fecha">{{ hoy | date : 'fullDate'}}</p>    
     <address>
-        <span>{{autor}}: </span>
+        <span>{{ autor }}: </span>
         <span>-</span>
         <span>
             <a [href]="'mailto:' + email"> {{ email }}</a>

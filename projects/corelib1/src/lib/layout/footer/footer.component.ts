@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
 	selector: 'crl-footer',
 	templateUrl: './footer.component.html',
-	styleUrls: ['./footer.component.css']
+	styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
   

@@ -1,12 +1,13 @@
-<crl-header [title]="title" [subtitle]="subtitle">
-    <crl-menu id="menu"></crl-menu>
-    <crl-menu id="login"></crl-menu>
+<crl-header [title]="title" [subtitle]="subtitle" [logo]="logo">
+    <crl-menu id="menu" [menuItems]="menuItems"></crl-menu>
+    <p id="login">Register - Login</p>
 </crl-header>
 
-<router-outlet>
+<main>
+    <router-outlet></router-outlet>
+</main>
 
-</router-outlet>
 
-<crl-footer>
-    
-</crl-footer>
+<crl-footer [autor]="autor" [email]="email" >
+    Curso de Angular Avanzado 12.0.0
+  </crl-footer>

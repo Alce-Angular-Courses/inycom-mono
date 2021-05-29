@@ -5,6 +5,7 @@
 export * from './lib/corelib1.service';
 export * from './lib/corelib1.component';
 export * from './lib/corelib1.module';
+export * from './lib/corelib1.interfaces';
 
 export {LayoutModule} from './lib/layout/layout.module';
 export * from './lib/layout/header/header.component';

@@ -5,32 +5,27 @@
     padding: 1rem 2rem;
 }
 
-
 .toolbar {
-    flex: 10 0 80%;
-    
-    
-}
-.toolbar h1, p {
+    flex: 10 0 90%;
+    h1, p {
         margin: 0;
     }
-.toolbar .navigation {
+    .navigation {
         margin-top: 1rem;
         margin-right: 1rem;
         display: flex;
         justify-content: space-between;
-    }
-
+    }    
+}
 
 .logo {
     flex: 1 0 10%;
     display: flex;
     justify-content: center;
     align-items: center;
-
-   
+    max-width: 7.5rem;
 } 
 
 .logo img {
-        max-width: 100%;
-    }
+    max-width: 100%;
+}
