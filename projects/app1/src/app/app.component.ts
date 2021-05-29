@@ -26,8 +26,10 @@ export class AppComponent implements OnInit{
 		this.email = 'alce65@hotmail.es';
 		this.menuItems = [
 			{name: 'Home', path: 'home'},
-			{name: 'Autores', path: 'autores'},
 			{name: 'Tareas', path: 'tareas'},
+			{name: 'Cursos', path: 'cursos'},
+			{name: 'Libros', path: 'libros'},
+			{name: 'Autores', path: 'autores'},
 			{name: 'About', path: 'about'}
 		];
 	}

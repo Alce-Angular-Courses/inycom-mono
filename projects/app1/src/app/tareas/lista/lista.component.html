@@ -1,0 +1,23 @@
+<h2>Lista</h2>
+
+<iny-nueva (addTarea)="onAddTarea($event)"></iny-nueva>
+
+<div class="lista">
+    <ng-container *ngIf="tareas.length; else sinTareas" >
+        <h3>Lista de tareas</h3>
+        <ul>
+            <!-- <li *ngFor="let tarea of tareas; let i = index"> -->
+            <li *ngFor="let item of tareas; index as i">
+                <iny-tarea [tarea]="item" [indice]="i"
+                    (changeTarea)="onChangeTarea($event)"
+                    (deleteTarea)="onDeleteTarea($event)"></iny-tarea>
+            </li>
+        </ul>
+    </ng-container>
+</div>
+
+<ng-template #sinTareas>
+    <p>Anímate a añadir una tarea</p>
+</ng-template>
+
+

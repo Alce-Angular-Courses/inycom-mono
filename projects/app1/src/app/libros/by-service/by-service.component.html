@@ -1,0 +1,25 @@
+<h2>Google Libros by-service</h2>
+<div class="form-group">
+  <label for="clave">Clave</label>
+  <input type="text"
+    class="form-control" name="clave" id="clave-srv"  
+    [(ngModel)]="clave" [placeholder]="message">
+</div>
+<button type="button" class="btn btn-primary" (click)="onClickBuscar()">Buscar</button>
+<button type="button" class="btn btn-primary" (click)="onClickBuscarRx()">Buscar Rx</button>
+
+
+<div class="lista">
+    <ng-container *ngIf="libros.length" >
+        <h3>Lista de libros</h3>
+        <ul>
+            <!-- <li *ngFor="let tarea of tareas; let i = index"> -->
+            <li *ngFor="let libro of libros; index as i">
+                <span>{{libro.id}}</span>
+                <span class="titulo">{{libro.titulo}}</span>
+                <span>{{libro.autor}}</span>
+                <span>{{libro.fecha}}</span>
+            </li>
+        </ul>
+    </ng-container>
+</div>

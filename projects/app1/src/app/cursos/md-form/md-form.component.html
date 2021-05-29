@@ -1,0 +1,87 @@
+<h2>md (Model Driven) form</h2>
+<form name="form-md" id ="form-md" [formGroup]="fgAlumno" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <legend>Datos de usuario</legend>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" formControlName="nombre" id="nombre">
+        </div>
+        <div class="error" [hidden]="fgAlumno.get('nombre')?.valid || fgAlumno.get('nombre')?.untouched">
+            <p *ngIf="fgAlumno.get('nombre')?.hasError('required')">
+                El campo nombre es obligatorio
+            </p>
+            <p *ngIf="fgAlumno.get('nombre')?.hasError('minlength')">
+                El nombre debe tener al menos 3 caracteres
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" formControlName="apellidos" id="apellidos">
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" formControlName="dni" id="dni">
+            </div>  
+        <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" class="form-control" formControlName="email" id="email">
+        </div>
+        <div class="form-group">
+            <label for="nacim">Fecha de nacimiento</label>
+            <input type="date" class="form-control" formControlName="nacim" id="nacim">
+        </div>
+        <div class="form-group">
+          <label for="coment">Comentarios</label>
+          <textarea class="form-control" formControlName="coment" id="coment" rows="3"></textarea>
+        </div>                            
+    </fieldset>    
+    <fieldset>
+        <legend>Datos del curso</legend>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" formControlName="isOk" id="isOk">
+            Estoy de acuerdo con ....
+            </label>
+        </div>  
+        <div>
+            <legend>Turno</legend>
+            <div *ngFor="let turno of turnos" class="form-check">
+                <label class="form-check-label" [title]="turno.info">
+                    <input type="radio" class="form-check-input" name="turno" [id]="'turno-' + turno.id"
+                    [value]="turno" formControlName="turno">
+                    {{ turno.nombre}}
+                </label>
+            </div>
+            <!-- <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id="" 
+                    value="tarde">
+                    Tarde
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id="" 
+                    value="noche">
+                    Noche
+                </label>
+            </div>  -->           
+        </div>  
+        <div class="form-group" >
+        <label for="curso">Selecciona el tema</label>
+            <select class="form-control" formControlName="curso" id="curso">
+                <option value=""></option>
+                <option *ngFor="let curso of cursos"
+                    [title]="curso.info"
+                    [ngValue]="curso">{{curso.nombre}}</option>
+                <!-- <option value="angular">Angular</option>
+                <option value="react">React</option>
+                <option value="vue">Vue</option> -->
+            </select>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary" [disabled]="fgAlumno.invalid">
+        Enviar</button>
+</form>   
+
+{{ fgAlumno.value |json}}

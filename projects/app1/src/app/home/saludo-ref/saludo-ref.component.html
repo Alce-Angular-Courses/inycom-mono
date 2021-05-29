@@ -1,0 +1,11 @@
+<h2>Saludo (Referencias Locales)</h2>
+<div class="form-group">
+  <label for="nombre-ref">Nombre</label>
+  <input type="text" #nameRef value='Pepe'
+    (input)="nameRef.value = nameRef.value"
+    class="form-control" name="nombre-ref" id="nombre-ref" >
+</div>
+<button type="button" class="btn btn-primary" (click)="nameRef.value = '' ">Borrar</button>
+<p>
+    Hola {{ nameRef.value ? nameRef.value.toUpperCase()  : 'amigo' }}
+</p>

@@ -1,4 +1,4 @@
 export const environment = {
 	production: true,
-	url: 'http/.....'
+	urlGoogle: 'https://www.googleapis.com/books/v1/volumes?q=intitle:'
 };

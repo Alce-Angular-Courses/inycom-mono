@@ -2,18 +2,25 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
-import { HomeTestComponent } from './home-test/home-test.component';
-import { Corelib1Module } from 'corelib1';
+import { HomeComponent } from './home.component';
+import { SaludoComponent } from './saludo/saludo.component';
+import { FormsModule } from '@angular/forms';
+import { SaludoRefComponent } from './saludo-ref/saludo-ref.component';
 
 
 @NgModule({
 	declarations: [
-		HomeTestComponent
+		HomeComponent,
+		SaludoComponent,
+		SaludoRefComponent
 	],
 	imports: [
 		CommonModule,
-		Corelib1Module,
+		FormsModule,
 		HomeRoutingModule
+	],
+	exports: [
+		HomeComponent
 	]
 })
 export class HomeModule { }

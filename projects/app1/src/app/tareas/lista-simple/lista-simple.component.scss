@@ -1,0 +1,22 @@
+.lista {
+    margin-top: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.boton {
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+li {
+    span {
+       padding: 0.5rem;; 
+    }
+}

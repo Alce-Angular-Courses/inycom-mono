@@ -1,0 +1,88 @@
+<h2>td (Template Driven) form</h2>
+<form name="form-td" id ="form-td" #formRef #ngFormRef="ngForm" (ngSubmit)="onSubmit(ngFormRef.value)">
+    <fieldset>
+        <legend>Datos de usuario</legend>
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="nombre" ngModel 
+               #nombreRef="ngModel" required minlength="3">
+        </div>
+        <div class="error" [hidden]="nombreRef.valid || nombreRef.untouched">
+            <p *ngIf="nombreRef.hasError('required')">
+                El campo nombre es obligatorio
+            </p>
+            <p *ngIf="nombreRef.hasError('minlength')">
+                El nombre debe tener al menos 3 caracteres
+            </p>
+
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" name="apellidos" id="apellidos" ngModel>
+        </div>
+        <div class="form-group">
+            <label for="dni">DNI</label>
+            <input type="text" class="form-control" name="dni" id="dni" ngModel maxlength="10">
+            </div>  
+        <div class="form-group">
+            <label for="email">Correo</label>
+            <input type="email" class="form-control" name="email" id="email"
+            ngModel>
+        </div>
+        <div class="form-group">
+            <label for="nacim">Fecha de nacimiento</label>
+            <input type="date" class="form-control" name="nacim" id="nacim" ngModel>
+        </div>
+        <div class="form-group">
+          <label for="coment">Comentarios</label>
+          <textarea class="form-control" name="coment" id="coment" rows="3" ngModel></textarea>
+        </div>                            
+    </fieldset>    
+    <fieldset>
+        <legend>Datos del curso</legend>
+        <div class="form-check">
+            <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="isOk" id="isOk" ngModel>
+            Estoy de acuerdo con ....
+            </label>
+        </div>  
+        <div>
+            <legend>Turno</legend>
+            <div *ngFor="let turno of turnos" class="form-check">
+                <label class="form-check-label" [title]="turno.info">
+                    <input type="radio" class="form-check-input" name="turno" [id]="'turno-' + turno.id"
+                    [value]="turno" ngModel>
+                    {{ turno.nombre}}
+                </label>
+            </div>
+            <!-- <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id="" 
+                    value="tarde">
+                    Tarde
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="turno" id="" 
+                    value="noche">
+                    Noche
+                </label>
+            </div>  -->           
+        </div>  
+        <div class="form-group" >
+        <label for="curso">Selecciona el tema</label>
+            <select class="form-control" name="curso" id="curso" ngModel>
+                <option value=""></option>
+                <option *ngFor="let curso of cursos"
+                    [title]="curso.info"
+                    [ngValue]="curso">{{curso.nombre}}</option>
+                <!-- <option value="angular">Angular</option>
+                <option value="react">React</option>
+                <option value="vue">Vue</option> -->
+            </select>
+        </div>
+    </fieldset>
+    <button type="submit" class="btn btn-primary" [disabled]="ngFormRef.invalid">
+        Enviar</button>
+</form>
