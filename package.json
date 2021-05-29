@@ -4,9 +4,15 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:1": "ng serve app1 --port 5100",
+    "start:2": "ng serve app2 --port 5200",
     "build": "ng build",
+    "build:core": "ng build corelib1 --watch --configuration development",
+    "build:aux": "ng build auxlib1 --watch --configuration development",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "eslint 'projects/**/*.{js,ts,tsx}'",
+    "lint:fix": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
   },
   "private": true,
   "dependencies": {
@@ -34,10 +40,18 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.0.1",
+    "@angular-eslint/builder": "12.0.0",
+    "@angular-eslint/eslint-plugin": "12.0.0",
+    "@angular-eslint/eslint-plugin-template": "12.0.0",
+    "@angular-eslint/schematics": "12.0.0",
+    "@angular-eslint/template-parser": "12.0.0",
     "@angular/cli": "~12.0.0",
     "@angular/compiler-cli": "~12.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "^4.25.0",
+    "@typescript-eslint/parser": "^4.25.0",
+    "eslint": "^7.26.0",
     "jasmine-core": "~3.7.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

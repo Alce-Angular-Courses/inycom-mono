@@ -4,6 +4,13 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "auxlib1": [
+        "dist/auxlib1/auxlib1",
+        "dist/auxlib1"
+      ],
+      "auxlib1/*": [
+        "dist/auxlib1/*"
+      ],
       "corelib1": [
         "dist/corelib1/corelib1",
         "dist/corelib1"

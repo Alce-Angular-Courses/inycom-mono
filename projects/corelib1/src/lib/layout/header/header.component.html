@@ -1,0 +1,19 @@
+<div class="toolbar" role="banner">
+    <header>
+        <h1>{{ title }}</h1>
+        <p>{{ subtitle }}</p>
+    </header>
+    <div class="navigation">
+        <div>
+            <ng-content select="#menu"></ng-content>
+        </div>
+        <div>
+            <ng-content select="#login"></ng-content>
+        </div>
+        
+    </div>
+</div>
+<div class="logo">
+    <img [src]="logo" alt="Angular Logotipo">
+</div>
+

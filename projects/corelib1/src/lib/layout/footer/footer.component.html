@@ -1,0 +1,11 @@
+<footer>
+    <p><ng-content></ng-content></p>
+    <p class="fecha">{{ hoy }}</p>    
+    <address>
+        <span>{{autor}}: </span>
+        <span>-</span>
+        <span>
+            <a [href]="'mailto:' + email"> {{ email }}</a>
+        </span>
+    </address>
+</footer>

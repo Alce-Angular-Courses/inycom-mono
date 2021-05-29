@@ -1,16 +1,17 @@
-
-
+/* eslint-disable linebreak-style */
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'app-elena',
-    templateUrl: './elena.component.html',
-    styleUrls: ['./elena.component.scss']
+	selector: 'iny-elena',
+	template: '',
+	styles: []
 })
 export class ElenaComponent implements OnInit {
-    constructor() { }
+	constructor() {
+		//
+	}
 
-    ngOnInit(): void { 
-        console.log('Hola Elena')
-    }
+	ngOnInit(): void {
+		console.log('Hola Elena');
+	}
 }

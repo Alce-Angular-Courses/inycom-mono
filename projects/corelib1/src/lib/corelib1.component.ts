@@ -1,20 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'crl-corelib1',
-  template: `
+	selector: 'crl-corelib1',
+	template: `
     <p>
-      corelib1 works!
+      Probando corelib1...
     </p>
   `,
-  styles: [
-  ]
+	styles: [
+	]
 })
 export class Corelib1Component implements OnInit {
 
-  constructor() { }
+	constructor() {
+		//
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+		//
+	}
 
 }
