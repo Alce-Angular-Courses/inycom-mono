@@ -1,0 +1,10 @@
+<h2>Saludo (Rx)</h2>
+<div class="form-group">
+  <label for="nombre-ref">Nombre</label>
+  <input type="text" value='Pepe' [formControl]="fcNombre"
+    class="form-control" name="nombre-ref" id="nombre-ref" >
+</div>
+<button type="button" class="btn btn-primary" (click)="onBorrar()">Borrar</button>
+<p>
+    Hola {{ fcNombre.value ?  fcNombre.value : 'amigo' }}
+</p>

@@ -1,0 +1,27 @@
+<ng-container *ngIf="isModal; else normalHeader">
+    <div class="modal-header">
+       <h4 class="modal-title">Nosotros</h4>
+       <button type="button" class="close" aria-label="Close" 
+       (click)="closeModal()">
+         <span aria-hidden="true">&times;</span>
+       </button>
+   </div>   
+   </ng-container>
+   <ng-template #normalHeader>
+       <h4>Nosotros</h4>
+   </ng-template>
+   
+   <div [ngClass]="{'modal-body': isModal}">
+       <p>Hola, {{ name ? name: 'amigo' }}!</p>
+       <ngb-carousel *ngIf="imagenes.length">
+           <ng-template ngbSlide *ngFor="let item of imagenes">
+               <div class="picsum-img-wrapper">
+               <img [src]="item.imagen" alt="Random first slide">
+               </div>
+               <div class="carousel-caption">
+               <h3>{{ item.titulo }}</h3>
+               <p> {{ item.texto }}</p>
+               </div>
+           </ng-template>
+       </ngb-carousel>
+</div>

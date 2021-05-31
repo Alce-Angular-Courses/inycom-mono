@@ -1,14 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-
 import { StoreTareasService } from './store-tareas.service';
 
-describe('StoreTareasService', () => {
+fdescribe('StoreTareasService', () => {
 	let service: StoreTareasService;
 	const store = 'Tareas';
 
 	beforeEach(() => {
-		TestBed.configureTestingModule({});
+		TestBed.configureTestingModule({
+		});
 		service = TestBed.inject(StoreTareasService);
+		// service = new StoreTareasService();
 	});
 
 	afterEach( () => {
