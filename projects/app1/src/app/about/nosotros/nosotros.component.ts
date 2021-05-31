@@ -1,5 +1,6 @@
-import { Component, Injector, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Injector, Input, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 interface ImagenPicsum {
 	titulo: string;
@@ -10,7 +11,7 @@ interface ImagenPicsum {
 @Component({
 	selector: 'iny-nosotros',
 	templateUrl: './nosotros.component.html',
-	styleUrls: ['./nosotros.component.scss']
+	styleUrls: ['./nosotros.component.scss'],
 })
 export class NosotrosComponent implements OnInit {
 	@Input() isModal: boolean | undefined;
