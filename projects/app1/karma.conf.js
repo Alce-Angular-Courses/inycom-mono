@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-undef */
 // Karma configuration file, see link for more information
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
@@ -7,6 +10,7 @@ module.exports = function (config) {
 		frameworks: ['jasmine', '@angular-devkit/build-angular'],
 		plugins: [
 			require('karma-jasmine'),
+			require('karma-mocha-reporter'),
 			require('karma-chrome-launcher'),
 			require('karma-jasmine-html-reporter'),
 			require('karma-coverage'),
@@ -32,7 +36,7 @@ module.exports = function (config) {
 				{ type: 'text-summary' }
 			]
 		},
-		reporters: ['progress', 'kjhtml'],
+		reporters: ['mocha', 'progress', 'kjhtml'],
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_INFO,

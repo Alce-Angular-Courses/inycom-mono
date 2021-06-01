@@ -4,6 +4,7 @@ import { AboutRoutingModule } from './about-routing.module';
 import { AboutComponent } from './about.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 	imports: [
 		CommonModule,
 		NgbModule,
-		AboutRoutingModule
+		AboutRoutingModule,
+		SharedModule
 	]
 })
 export class AboutModule { }

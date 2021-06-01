@@ -1,0 +1,8 @@
+<button id="log-button"type="button" class="btn btn-secundary btn-sm">
+    <ng-container *ngIf="!isLogin()">
+        login
+    </ng-container>
+    <ng-container *ngIf="isLogin()">
+        logout
+    </ng-container>
+</button>

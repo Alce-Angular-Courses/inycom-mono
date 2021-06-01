@@ -6,7 +6,7 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 @Component({
 	selector: 'iny-about',
 	template: `
-    <p>
+    <p inyComentar="Muy importante">
       about works!
     </p>
 	<button type="button" class="btn btn-primary" (click)="goNosotros()"> 

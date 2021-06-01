@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { StoreTareasService } from './store-tareas.service';
 
-fdescribe('StoreTareasService', () => {
+describe('StoreTareasService', () => {
 	let service: StoreTareasService;
 	const store = 'Tareas';
 

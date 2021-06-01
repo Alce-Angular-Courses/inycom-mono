@@ -1,0 +1,14 @@
+<p>autores works!</p>
+
+<div class="form-group">
+    <label for="autor">Autor</label>
+    <input type="text" #refAutor
+      class="form-control" name="autor" id="autor" placeholder="Nuevo autor">
+</div>
+<button type="button" class="btn btn-primary" (click)="addAutor(refAutor.value)">Añadir</button>
+<button type="button" class="btn btn-primary" (click)="addAutorClon(refAutor.value)">Añadir Clon</button>
+<button type="button" class="btn btn-primary" (click)="addAutorRx(refAutor.value)">Añadir Rx</button>
+
+<iny-lista [lista]="autores"></iny-lista>
+<iny-lista-onpush [lista]="autores"></iny-lista-onpush>
+<iny-lista-rx [lista]="autores$.asObservable()"></iny-lista-rx>

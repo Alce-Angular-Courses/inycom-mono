@@ -4,7 +4,6 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 	selector: 'iny-lista',
 	templateUrl: './lista.component.html',
 	styleUrls: ['./lista.component.scss'],
-	changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListaComponent implements OnInit {
 	@Input() lista: Array<string>

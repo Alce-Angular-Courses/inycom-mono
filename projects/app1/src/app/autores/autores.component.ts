@@ -21,10 +21,15 @@ export class AutoresComponent implements OnInit {
 		]
 	}
 
-	addAutor() {
-		this.autores.push(this.fcAutor.value)
-		this.fcAutor.reset()
+	addAutor(): void {
+		this.autores.push(this.fcAutor.value);
+		this.fcAutor.reset();
 	}
 
+	addAutorClon(): void {
+		// this.autores.push(this.fcAutor.value)
+		this.autores = [...this.autores, this.fcAutor.value];
+		this.fcAutor.reset();
+	}
 
 }

@@ -41,11 +41,33 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Arquitectura. Módulos y Librerías
     - Módulos funcionales
     - Modelos de datos
+- Testing. Introducción
+    - Elementos de jasmine.js
+    - Elementos de Angular. TestBed
+- Componente. Binding Rx: formControl
+    - Ciclo de vida. Comunicación ente componentes: Input/Output. 
+    - Proyección de contenido. 
+    - Bibliotecas de componentes
+- Detección de cambio
+    - Estrategias de detección. Inputs
+
+## Dia 5. Componentes (continuación)
+- Detección de cambio
+  - Estrategias de detección. Eventos, Detección manual, Observables.
+- Testing de componentes
+- Directivas estructurales: codificación interna
+- Directivas y pipes propios
+- Testing de directivas y pipes
+
+## Dia 6. Servicios.
+- Arbol de injectores
+- Servicios Http
+    - Gestiòn de un API Rest
+    - Interceptores
+- ...
+
 - Enrutamiento y navegación
     - Carga diferida (Lazy Loading)
     - Submenús
     - Rutas con parámetros. Navegación imperativa
     - Guardias
-- Testing. Introducción
-    - Elementos de jasmine.js
-    - Elementos de Angular. TestBed
