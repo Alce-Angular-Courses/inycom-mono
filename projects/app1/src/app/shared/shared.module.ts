@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Login1Component } from './login1/login1.component';
 import { Login2Component } from './login2/login2.component';
 import { ComentarDirective } from './comentar.directive';
+import { TruncarPipe } from './truncar.pipe';
 
 
 
@@ -10,7 +11,8 @@ import { ComentarDirective } from './comentar.directive';
 	declarations: [
 		Login1Component,
 		Login2Component,
-		ComentarDirective
+		ComentarDirective,
+		TruncarPipe
 	],
 	imports: [
 		CommonModule
@@ -18,7 +20,8 @@ import { ComentarDirective } from './comentar.directive';
 	exports: [
 		Login1Component,
 		Login2Component,
-		ComentarDirective
+		ComentarDirective,
+		TruncarPipe
 	]
 })
 export class SharedModule { }

@@ -33,7 +33,8 @@ export class ByServiceComponent implements OnInit {
 			return;
 		}
 		this.ls.getGoogleRx(this.clave).subscribe(
-			(resp: Array<Libro>) => this.libros = resp
+			(resp: Array<Libro>) => this.libros = resp,
+			(error: string) => console.log(error)
 		);
 	}
 

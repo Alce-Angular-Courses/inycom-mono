@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { Libro } from '../models/libro';
 import { LIBROS } from '../models/libros.data';
@@ -60,6 +60,21 @@ export class LibrosService {
 
 	getGoogleRx(clave: string): Observable<Array<Libro>> {
 		return this.http.get(this.urlBase + clave)
+			.pipe(
+				catchError((error) => {
+					let errorMessage
+					if (error instanceof ErrorEvent) {
+						// client-side error
+						errorMessage = `Client-side error: ${error.error.message}`;
+					} else {
+						// backend error
+						errorMessage = `Server-side error: ${error.status} ${error.message}`;
+					}
+					console.log('Error', error);
+					return throwError(errorMessage);
+				})
+
+			)
 			.pipe(
 				map((resp: any) => {
 					return resp.items.map(

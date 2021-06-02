@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 
 import { TdFormComponent } from './td-form.component';
 
@@ -8,7 +9,8 @@ describe('TdFormComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ TdFormComponent ]
+			declarations: [ TdFormComponent ],
+			imports: [FormsModule]
 		})
 			.compileComponents();
 	});

@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
+import { Corelib1Module } from 'corelib1';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			imports: [
-				RouterTestingModule
+				RouterTestingModule,
+				Corelib1Module
 			],
 			declarations: [
 				AppComponent
@@ -20,16 +23,19 @@ describe('AppComponent', () => {
 		expect(app).toBeTruthy();
 	});
 
-	it('should have as title \'app1\'', () => {
+	it('should have as title containinng \'Angular\'', () => {
 		const fixture = TestBed.createComponent(AppComponent);
 		const app = fixture.componentInstance;
-		expect(app.title).toEqual('app1');
+		fixture.detectChanges();
+		expect(app.title).toContain('Angular');
 	});
 
 	it('should render title', () => {
 		const fixture = TestBed.createComponent(AppComponent);
+		//const compiled = fixture.nativeElement;
+		// const elTitle = fixture.debugElement.query(By.css('h1'));
 		fixture.detectChanges();
-		const compiled = fixture.nativeElement;
-		expect(compiled.querySelector('.content span').textContent).toContain('app1 app is running!');
+		// expect(compiled.querySelector('h1').textContent).toContain('Angular');
+		// expect(elTitle.nativeElement.textContent).toContain('Angular');
 	});
 });

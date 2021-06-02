@@ -33,7 +33,7 @@ export class NosotrosComponent implements OnInit {
 		this.imagenes = [944, 1011, 984].map((n) => {
 			return {
 				titulo: 'Imagen ' + n,
-				texto: 'Texto ' + n,
+				texto: 'Texto un poco más largo ' + n,
 				imagen: `https://picsum.photos/id/${n}/900/500`
 			};
 		}

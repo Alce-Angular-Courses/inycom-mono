@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GoogleComponent } from './google.component';
@@ -8,7 +9,8 @@ describe('GoogleComponent', () => {
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			declarations: [ GoogleComponent ]
+			declarations: [ GoogleComponent ],
+			imports: [HttpClientModule]
 		})
 			.compileComponents();
 	});

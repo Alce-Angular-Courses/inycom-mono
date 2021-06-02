@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Libro } from '../../models/libro';
 import { environment } from '../../../environments/environment';
@@ -19,7 +19,8 @@ export class GoogleComponent implements OnInit {
 	ngOnInit(): void {
 		this.message = 'De que quieres buscar los libros?';
 		this.libros = [];
-		this.urlBase = environment.urlGoogle;
+		this.urlBase = environment.urlGooleSimple;
+	
 	}
 
 	onClickBuscar(): void {
@@ -27,7 +28,11 @@ export class GoogleComponent implements OnInit {
 			return;
 		}
 		this.libros = [];
-		this.http.get(this.urlBase + this.clave).toPromise().then(
+		const params: HttpParams = new HttpParams().append('q','intitle:'+ this.clave );
+
+		// const headers: HttpHeaders = new HttpHeaders({'x-token': 'yiuer7632o4yei'});
+		const headers: HttpHeaders = new HttpHeaders({'sec-fetch-dest': 'full'});
+		this.http.get(this.urlBase, {params, headers} ).toPromise().then(
 			(resp: any) => {
 				console.log(resp);
 				this.libros = resp.items.map(
@@ -40,8 +45,11 @@ export class GoogleComponent implements OnInit {
 						};
 					}
 				); // fin del Array.map
-			} // fin de la función onfulfilled
-		);
+			}, // fin de la función onfulfilled
+			
+		).catch((error: any) => {
+			console.log(error.message);
+		});
 
 		this.clave = '';
 	}
@@ -66,7 +74,8 @@ export class GoogleComponent implements OnInit {
 					); // fin del Array.map
 				}) // fin del operador map
 			).subscribe(
-				(resp: Array<Libro>) => this.libros = resp
+				(resp: Array<Libro>) => this.libros = resp,
+				(error: any) => console.log(error.message)
 			);
 
 		this.clave = '';

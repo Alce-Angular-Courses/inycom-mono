@@ -3,7 +3,7 @@ import { AuthService } from '../../services/auth.service';
 
 import { Login1Component } from './login1.component';
 
-fdescribe('Login1Component', () => {
+describe('Login1Component', () => {
 	const storeName = 'Token';
 	let component: Login1Component;
 	let fixture: ComponentFixture<Login1Component>;
