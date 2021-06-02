@@ -56,18 +56,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   - Estrategias de detección. Eventos, Detección manual, Observables.
 - Testing de componentes
 - Directivas estructurales: codificación interna
-- Directivas y pipes propios
-- Testing de directivas y pipes
+- Directivas propias
 
 ## Dia 6. Servicios.
-- Arbol de injectores
+- Directivas y Pipes (continuación)
+    - Pipes propios
+    - Testing de directivas y pipes
+- Servicios. Arbol de injectores
 - Servicios Http
     - Gestiòn de un API Rest
     - Interceptores
-- ...
-
-- Enrutamiento y navegación
-    - Carga diferida (Lazy Loading)
-    - Submenús
-    - Rutas con parámetros. Navegación imperativa
-    - Guardias
+- Testing en servicios asíncronos
